@@ -28,8 +28,7 @@ export const weather: APIGatewayProxyHandler = async (event) => {
 
     return formatJSONResponse({
       city,
-      weather: weatherRes.data.weather[0].description,
-      temperature:weatherRes.data.main.temp
+      weather: weatherRes.data,
     });
   } catch (error: any) {
     return formatJSONResponse(
